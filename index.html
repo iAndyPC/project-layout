@@ -16,9 +16,9 @@
 <header class="header">
    <div class="container container_header">
       <div class="header__left">
-         <button class="mobile__menu-btn"><i class="fas fa-bars"></i></button>
-         <nav class="menu__nav">
-            <ul class="menu__list">
+         <button class="header-left__menu-btn"><i class="fas fa-bars"></i></button>
+         <nav class="header-left__menu-nav">
+            <ul class="menu-nav__menu-list">
                <li class="menu__item"><a class="menu-item__link section-transition" href="#what-i-do">Услуги</a></li>
                <li class="menu__item"><a class="menu-item__link section-transition" href="#my-works">Портфолио</a></li>
                <li class="menu__item"><a class="menu-item__link section-transition" href="#promo">Стоимость</a></li>
@@ -112,8 +112,8 @@
 <!-- Footer -->
 <footer class="footer">
    <div class="container container_footer">
-      <nav class="menu__nav menu__nav_footer">
-         <ul class="menu__list menu__list_footer">
+      <nav class="header-left__menu-nav header-left__menu-nav_footer">
+         <ul class="menu-nav__menu-list menu-nav__menu-list_footer">
             <li class="menu__item menu__item_footer"><a class="menu-item__link menu-item__link_footer section-transition" href="#what-i-do">Услуги</a></li>
             <li class="menu__item menu__item_footer"><a class="menu-item__link menu-item__link_footer section-transition" href="#my-works">Портфолио</a></li>
             <li class="menu__item menu__item_footer"><a class="menu-item__link menu-item__link_footer section-transition" href="#promo">Стоимость</a></li>
@@ -146,31 +146,36 @@
 <div id="order-call" class="modal-div">
    <button class="modal_close"><i class="fas fa-times"></i></button>
    <form class="form-callback">
+      <input type="hidden" name="project_name" value="Мой сайт визитка">
+      <input type="hidden" name="admin_email" value="andreybartdev@gmail.com">
+      <input type="hidden" name="form_subject" value="Заказ">
       <h2 class="form__title">Заказать звонок</h2>
       <label class="form__input-name">
          <span class="input-name__text">Ваше имя</span>
-         <input class="input-name__input input" type="text" name="Имя">
+         <input class="input-name__input input" type="text" name="Имя" placeholder=" ">
       </label>
       <label class="form__input-tel">
          <span class="input-tel__text">Номер телефона</span>
-         <input class="input-tel__input input" type="tel" name="Телефон" placeholder="Введите ваш номер телефона" required>
+         <input class="input-tel__input input inputmask" type="tel" name="Телефон" placeholder="Ваш номер телефона">
       </label>
-      <label class="form__input-message">
-         <span class="input-message__text">Сообщение</span>
-         <input class="input-message__input input" type="text" name="Сообщение">
+      <label class="form__input-email">
+         <span class="input-message__email">Електронная почта</span>
+         <input class="input-email__input input inputmask" type="email" name="Email" placeholder="Ваш email">
       </label>
       <label class="form__privacy-policy">
-         <input class="privacy-policy__input" type="checkbox" required checked>
+         <input class="privacy-policy__input" type="checkbox" checked>
          Согласен с обработкой данных
       </label>
       <a class="privacy-policy__link" href="#">Политика конфиденциальности</a><span class="is-required"> *</span>
       <span class="form__or-call">или звоните: <a class="privacy-policy__tel-number" href="tel:+74999955577">8 499 995-55-77</a></span>
-      <input class="form__submit" type="submit" value="Заказать звонок">
+      <button class="form__submit" type="submit" value="call me">Заказать звонок</button>
    </form>
 </div>
 <div class="overlay"></div><!-- Подложка, одна нa всю страницу -->
 
 <script src="js/jquery-3.4.1.js"></script>
+<script src="js/jquery.inputmask.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
 <script src="js/swiper.min.js"></script>
 <script src="https://kit.fontawesome.com/cf8ba2603c.js"></script>
 <script src="js/script.js"></script>

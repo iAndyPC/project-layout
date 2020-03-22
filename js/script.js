@@ -22,12 +22,12 @@ $(document).ready(function(){
 
    close.click( function(){ // лoвим клик пo крестику или oверлэю
       modal // все мoдaльные oкнa
-          .animate({opacity: 0, top: '45%'}, 200, // плaвнo прячем
+         .animate({opacity: 0, top: '45%'}, 200, // плaвнo прячем
               function(){ // пoсле этoгo
              $(this).css('display', 'none');
              overlay.fadeOut(400); // прячем пoдлoжку
-          }
-          );
+         }
+         );
    });
 
    // Swiper
@@ -75,4 +75,49 @@ $(document).ready(function(){
       }, 700);
    });
 
+   //inputmask
+   $('input[type="tel"]').inputmask({"mask": "+7 (999) 999-9999"});
+
+   //Validate
+   $('.form-callback').each(function () {
+      $(this).validate({
+         errorPlacement(error, element) {
+            return true;
+         },
+         focusInvalid: false,
+         rules: {
+            Телефон: {
+               required: true,
+            },
+            Имя: {
+               required: true,
+               maxlength: 25,
+            },
+            Email: {
+               required: true,
+               email: true
+            }
+         },
+         submitHandler(form) {
+            let th = $(form);
+
+            console.log(th)
+
+            $.ajax({
+               type: 'POST',
+               url: './php/mail.php',
+               data: th.serialize(),
+            }).done(() => {
+               th.trigger('reset');
+               $(modal).animate(
+                   {opacity: 0, top: '45%'}, 200, function () {
+                      $(this).css('display', 'none');
+                      overlay.fadeOut(400);
+                   });
+
+               return false;
+            });
+         }
+      });
+   });
 });
