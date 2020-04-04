@@ -17,13 +17,26 @@
    <div class="container container_header">
       <div class="header__left">
          <button class="header-left__menu-btn"><i class="fas fa-bars"></i></button>
-         <nav class="header-left__menu-nav">
+         <nav class="header-left__menu-nav mobile-off">
             <ul class="menu-nav__menu-list">
                <li class="menu__item"><a class="menu-item__link section-transition" href="#what-i-do">Услуги</a></li>
                <li class="menu__item"><a class="menu-item__link section-transition" href="#my-works">Портфолио</a></li>
                <li class="menu__item"><a class="menu-item__link section-transition" href="#promo">Стоимость</a></li>
             </ul>
          </nav>
+
+         <!-- mobile menu -->
+         <div class="mobile-menu">
+            <div class="mobile-menu__popup">
+               <a class="mobile-menu__close" href="#"></a>
+               <ul class="mobile-menu__menu-list">
+                  <li class="mobile-menu__item"><a class="mobile-menu-item__link section-transition" href="#what-i-do">Услуги</a></li>
+                  <li class="mobile-menu__item"><a class="mobile-menu-item__link section-transition" href="#my-works">Портфолио</a></li>
+                  <li class="mobile-menu__item"><a class="mobile-menu-item__link section-transition" href="#promo">Стоимость</a></li>
+               </ul>
+            </div>
+         </div>
+
       </div>
       <div class="header__right">
          <a class="header__tel-number" href="tel:+74999955577">+7 (499)995-55-77</a>
@@ -39,19 +52,21 @@
    <span class="flying-symbol flying-symbol_fly-3 flying-symbol_anim" aria-hidden="true">&lt;/&gt;</span>
    <span class="flying-symbol flying-symbol_fly-4 flying-symbol_anim" aria-hidden="true">&lt;div&gt;</span>
    <span class="flying-symbol flying-symbol_fly-5 flying-symbol_anim" aria-hidden="true">&lt;div&gt;</span>
+   <span class="flying-symbol flying-symbol_fly-tablet flying-symbol_anim" aria-hidden="true">&lt;/&gt;</span>
 
    <div class="container container_presentation">
       <h1 class="my-name">Дмитрий Алексеев</h1>
       <p class="my-description">Frontend-разработчик и веб-верстальщик</p>
       <a class="btn_red btn_red_presentation section-transition" href="#what-i-do">Узнать Больше</a>
-      <img src="img/man.png" alt="Это Я" class="man">
+      <img src="img/color-figure.svg" class="presentation__color-figure">
+      <img src="img/man.png" alt="Это Я" class="presentation__man">
    </div>
 </section>
 
 <!-- What i do -->
 <section class="what-i-do" id="what-i-do">
    <div class="container container_what-i-do">
-      <h2 class="what-i-do__title section-title">Что я делаю</h2>
+      <h2 class="what-i-do__title section__title">Что я делаю</h2>
       <div class="abilities">
          <div class="abilities__ability abilities__ability_layout">
             <p class="ability__descr">Верстка лендинг-страниц <br> и сайтов любой сложности</p>
@@ -73,7 +88,7 @@
 <!-- My works -->
 <section class="my-works" id="my-works">
    <div class="container container_my-works">
-      <h2 class="my-works__top-text section-title">Примеры моих работ</h2>
+      <h2 class="my-works__title section__title">Примеры моих работ</h2>
 
       <div class="container-for-swiper">
          <div class="swiper-button-prev"></div>
@@ -104,7 +119,7 @@
    <span class="flying-symbol promo__flying-symbol_fly-5 promo__flying-symbol_anim" aria-hidden="true">{ }</span>
 
    <div class="container container_promo">
-      <h2 class="promo__text-top">Адаптивная вёрстка под все устройства <br> и браузеры от 1000 рублей всего за 4 часа.*</h2>
+      <h2 class="promo__title">Адаптивная вёрстка под все устройства <br> и браузеры от 1000 рублей всего за 4 часа.*</h2>
       <p class="promo__description">Срок и стоимость могут отличаться от заявленных и рассчитываются индивидуально, в зависимости от сложности задач.</p>
    </div>
 </section>
@@ -121,10 +136,10 @@
       </nav>
       <div class="footer__contacts">
          <div class="footer__tel">
-            <a href="tel:+74999955555"><i class="fas fa-phone-alt"></i> +7 (499)995-77-55</a>
+            <a href="tel:+74999955555" class="footer-tel__number"><i class="fas fa-phone-alt"></i> +7 (499)995-77-55</a>
          </div>
          <div class="footer__mail">
-            <a href="mailto:dmitry@alekseev.com"><i class="fas fa-envelope"></i>dmitry@alekseev.com</a>
+            <a href="mailto:dmitry@alekseev.com" class="footer-mail__text"><i class="fas fa-envelope"></i>dmitry@alekseev.com</a>
          </div>
       </div>
       <div class="footer__interaction">
@@ -165,7 +180,7 @@
       <label class="form__privacy-policy">
          <input class="privacy-policy__input" type="checkbox" checked>
          Согласен с обработкой данных
-      </label>
+      </label><br>
       <a class="privacy-policy__link" href="#">Политика конфиденциальности</a><span class="is-required"> *</span>
       <span class="form__or-call">или звоните: <a class="privacy-policy__tel-number" href="tel:+74999955577">8 499 995-55-77</a></span>
       <button class="form__submit" type="submit" value="call me">Заказать звонок</button>

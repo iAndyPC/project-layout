@@ -75,6 +75,7 @@ html, body {
    height: auto;
    border: none;
    background-color: transparent;
+   cursor: pointer;
 }
 .fa-bars {
    font-size: 40px;
@@ -126,6 +127,47 @@ html, body {
    width: 100%;
 }
 
+/* Mobile menu */
+.mobile-menu__popup {
+   display: none;
+   background: #2c2e3e;
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   padding: 30px;
+   z-index: 9999;
+   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.mobile-menu__close {
+   display: block;
+   width: 28px;
+   height: 28px;
+   background: url(https://snipp.ru/demo/449/close.png) 0 0 repeat;
+   position: absolute;
+   right: 20px;
+   top: 20px;
+   z-index: 100;
+}
+.mobile-menu__menu-list {
+   margin: 0;
+   padding: 0;
+}
+.mobile-menu__item {
+   list-style: none;
+   margin: 10px 0;
+   padding: 0;
+}
+.mobile-menu-item__link {
+   font-size: 18px;
+   color: rgb(255, 255, 255);
+   line-height: 1.4;
+   text-decoration: none;
+}
+.body_pointer * {
+   cursor: pointer;
+}
+
 .header__right {
    display: flex;
    justify-content: space-between;
@@ -133,7 +175,7 @@ html, body {
 }
 
 .header__tel-number {
-   font-size: 26px;
+   font-size: 1.36vw;
    margin-right: 25px;
    font-weight: bold;
    text-decoration: none;
@@ -158,11 +200,9 @@ html, body {
 
 /*--- Presentation ---*/
 .presentation {
-   background: url('../img/color-figure.svg') no-repeat 143% -55px;
-   background-size: 1250px;
    background-color: #fbfbfb;
    position: relative;
-   padding-bottom: 238px;
+   padding-bottom: 237px;
 }
 
 .flying-symbol {
@@ -176,33 +216,35 @@ html, body {
 }
 
 .flying-symbol_fly-1 {
-   transform: rotate(30deg) translateX(260%) translateY(-84%);
+   transform: rotate(30deg) translateX(6.3vw) translateY(-2.5vw);
    font-size: 50px;
    background-image: linear-gradient(to bottom right, #ff2f96, #ff8f5a);
 }
-
 .flying-symbol_fly-2 {
-   transform: rotate(16deg) translateX(930%) translateY(256%);
+   transform: rotate(16deg) translateX(15.9vw) translateY(8.9vw);
    font-size: 55px;
    background-image: linear-gradient(to bottom right, #ff2f96, #ff8f5a);
 }
-
 .flying-symbol_fly-3 {
-   transform: rotate(-22deg) translateX(241%) translateY(1278%);
+   transform: rotate(-22deg) translateX(7.4vw) translateY(34vw);
    font-size: 42px;
    background-image: linear-gradient(to bottom left, #ff2f96, #ff8f5a);
 }
-
 .flying-symbol_fly-4 {
-   transform: rotate(-12deg) translateX(1003%) translateY(552%);
+   transform: rotate(-12deg) translateX(39.5vw) translateY(11vw);
    font-size: 32px;
    background-image: linear-gradient(to bottom left, #ff2f96, #ff8f5a);
 }
-
 .flying-symbol_fly-5 {
-   transform: rotate(20deg) translateX(1124%) translateY(170%);
+   transform: rotate(20deg) translateX(54.2vw) translateY(3.9vw);
    font-size: 36px;
    background-image: linear-gradient(to bottom right, #ff2f96, #ff8f5a);
+}
+.flying-symbol_fly-tablet {
+   display: none;
+   transform: rotate(-22deg) translateX(54.2vw) translateY(3.9vw);
+   font-size: 45px;
+   background-image: linear-gradient(to bottom left, #ff2f96, #ff8f5a);
 }
 
 .flying-symbol_anim {
@@ -218,7 +260,7 @@ html, body {
 .my-name {
    font-size: 80px;
    font-weight: 900;
-   margin-top: 171px;
+   margin-top: 173px;
    margin-bottom: 14px;
 }
 
@@ -250,37 +292,49 @@ html, body {
 
 }
 
-.man {
+.presentation__color-figure {
    position: absolute;
-   flex-flow: row;
-   height: 661px;
+   z-index: 1;
+   width: 1250px;
+   height: auto;
+   top: -51px;
+   right: -281px;
+}
+
+.presentation__man {
+   position: absolute;
+   z-index: 3;
    width: 563px;
-   right: 10.8%;
-   top: -7px;
+   right: 207px;
+   top: -6px;
 }
 
 /*--- What i do ---*/
 .what-i-do {
-   padding-bottom: 103px;
+   position: relative;
+   padding-bottom: 5.39vw;
+   padding-top: 4.52vw;
+   z-index: 2;
+   background-color: #FFFFFF;
 }
 
 .container_what-i-do {
    text-align: center;
 }
 
-.section-title {
-   font-size: 54px;
+.section__title {
+   font-size: 2.8vw;
    font-weight: bold;
 }
 .what-i-do__title {
    margin-bottom: 90px;
-   margin-top: 87px;
+   margin-top: 0;
 }
 
 .abilities {
    display: flex;
    justify-content: space-between;
-   margin-bottom: 81px;
+   margin-bottom: 75px;
    width: 100%;
 }
 
@@ -291,9 +345,10 @@ html, body {
 }
 
 .ability__descr {
-   font-size: 20px;
+   font-size: 1.05vw;
    margin-top: 92px;
    text-align: center;
+   line-height: 27px;
    color: #8993ad;
 }
 
@@ -320,7 +375,8 @@ html, body {
 /*--- My works ---*/
 .my-works {
    background-color: #fbfbfb;
-   padding-bottom: 103px;
+   padding-bottom: 5.3vw;
+   padding-top: 4.73vw;
 }
 
 .container_my-works {
@@ -329,9 +385,9 @@ html, body {
    align-items: center;
 }
 
-.my-works__top-text {
+.my-works__title {
    margin-bottom: 100px;
-   margin-top: 89px;
+   margin-top: 0;
 }
 
 /*--- Swiper ---*/
@@ -354,10 +410,10 @@ html, body {
 }
 .swiper-slide__discr {
    text-align: center;
-   font-size: 20px;
+   font-size: 1.05vw;
    color: #8993ad;
    font-weight: 300;
-   margin-top: 29px;
+   margin-top: 34px;
 }
 .swiper-button-prev,
 .swiper-button-next {
@@ -410,8 +466,8 @@ html, body {
 
 /*--- Promo ---*/
 .promo {
-   padding-top: 73px;
-   padding-bottom: 84px;
+   padding-top: 3.95vw;
+   padding-bottom: 4.1vw;
    background-image: linear-gradient(to top right, #ff8f5a 30%, #ff2f96 70%);
    position: relative;
 }
@@ -421,61 +477,62 @@ html, body {
 }
 
 .promo__flying-symbol_fly-1 {
-   transform: rotate(28deg) translateX(323%) translateY(-15%);
+   transform: rotate(28deg) translateX(7.4vw) translateY(-0.4vw);
    font-size: 48px;
 }
 
 .promo__flying-symbol_fly-2 {
-   transform: rotate(16deg) translateX(916%) translateY(253%);
+   transform: rotate(16deg) translateX(15.9vw) translateY(8.9vw);
    font-size: 56px;
 }
 
 .promo__flying-symbol_fly-3 {
-   transform: rotate(20deg) translateX(1651%) translateY(-462%);
+   transform: rotate(20deg) translateX(75vw) translateY(-10.6vw);
    font-size: 37px;
 }
 
 .promo__flying-symbol_fly-4 {
-   transform: rotate(-22deg) translateX(2767%) translateY(1467%);
+   transform: rotate(-22deg) translateX(78.6vw) translateY(36vw);
    font-size: 39px;
 }
 
 .promo__flying-symbol_fly-5 {
-   transform: rotate(-19deg) translateX(3636%) translateY(1410%);
+   transform: rotate(-19deg) translateX(82.7vw) translateY(42.6vw);
    font-size: 48px;
 }
 
 .promo__flying-symbol_anim {
-   transform: translateX(46vw) translateY(37vh);
+   transform: translateX(46vw) translateY(20vw);
 }
 
 .container_promo {
    display: flex;
    flex-direction: column;
    align-items: flex-start;
+   max-width: 50%;
 }
 
-.promo__text-top {
-   font-size: 45px;
+.promo__title {
+   font-size: 2.34vw;
    font-weight: bold;
-   margin: 0 auto 31px auto;
+   margin: 0 auto 29px auto;
    max-width: 950px;
    color: white;
    line-height: 1.37;
 }
 
 .promo__description {
-   font-size: 18px;
-   margin: auto;
-   padding-right: 200px;
+   font-size: 1vw;
+   margin: 0;
    color: white;
    max-width: 42em;
-   line-height: 1.50;
+   line-height: 1.6;
 }
 
 .promo__description::before {
    content: '*';
-   margin-right: 5px;
+   position: absolute;
+   left: 24.3%;
 }
 
 /*--- Footer ---*/
@@ -490,8 +547,8 @@ html, body {
 }
 
 .header-left__menu-nav_footer {
-   margin-top: 83px;
-   margin-bottom: 93px;
+   margin-top: 4.3vw;
+   margin-bottom: 4.8vw;
 }
 
 .menu-nav__menu-list_footer {
@@ -527,14 +584,12 @@ html, body {
    align-self: flex-start;
    margin-bottom: 30px;
 }
-
-.footer__tel a {
+.footer-tel__number {
    color: black;
    font-size: 25px;
    text-decoration: none;
 }
-
-.footer__tel a i {
+.footer-tel__number i {
    margin-right: 10px;
    background: linear-gradient(to bottom, #ff2f96, #f38855);
    font-size: 20px;
@@ -545,14 +600,12 @@ html, body {
 .footer__mail {
    margin-bottom: 10px;
 }
-
-.footer__mail a {
+.footer-mail__text {
    color: black;
    font-size: 25px;
    text-decoration: none;
 }
-
-.footer__mail a i {
+.footer-mail__text i {
    margin-right: 21px;
    background: linear-gradient(to top, #ff2f96, #f38855);
    font-size: 20px;
@@ -698,6 +751,9 @@ html, body {
 .form-callback {
 
 }
+.form-callback br {
+   display: none;
+}
 
 .form__title {
    text-align: center;
@@ -809,7 +865,7 @@ html, body {
 
 /* Подложка */
 .overlay {
-   z-index: 3; /* подложка должна быть выше слоев элементов сайта, нo ниже слоя модального окна */
+   z-index: 4; /* подложка должна быть выше слоев элементов сайта, нo ниже слоя модального окна */
    position: fixed; /* всегда перекрывает весь сайт */
    background-color: #000; /* черная */
    opacity: 0.8; /* нo немного прозрачна */
@@ -825,372 +881,114 @@ html, body {
 
 /*--- Media ---*/
 /*--- Desktop ---*/
-@media (max-width: 1765px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 157% -55px;
-      background-size: 1250px;
-      background-color: #fbfbfb;
-   }
-   .flying-symbol_fly-5 {
-      transform: rotate(20deg) translateX(1030%) translateY(170%);
-   }
-}
 @media (max-width: 1700px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 180% -55px;
-      background-size: 1250px;
-      background-color: #fbfbfb;
-   }
-   .my-name {
-      font-size: 70px;
+   .flying-symbol_fly-1 {
+      transform: rotate(30deg) translateX(4.3vw) translateY(-1.5vw);
    }
    .flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(640%) translateY(270%);
+      transform: rotate(16deg) translateX(8.9vw) translateY(15.9vw);
+   }
+   .flying-symbol_fly-3 {
+      transform: rotate(-22deg) translateX(5.4vw) translateY(36vw);
    }
    .flying-symbol_fly-5 {
-      transform: rotate(20deg) translateX(962%) translateY(278%);
+      transform: rotate(20deg) translateX(43.2vw) translateY(9.9vw);
    }
-   .man {
-      top: -18px;
-      right: 7.1%;
+   .my-name {
+      font-size: 75px;
    }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(2577%) translateY(1367%);
+   .presentation__color-figure {
+      width: 1200px;
+      top: -54px;
+      right: -347px;
    }
-}
-@media (max-width: 1662px) {
-   .flying-symbol_fly-5 {
-      transform: rotate(20deg) translateX(889%) translateY(338%);
-   }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 193% -55px;
-      background-size: 1250px;
-      background-color: #fbfbfb;
-   }
-   .man {
-      right: 6.1%;
+   .presentation__man {
+      width: 557px;
+      right: 120px;
+      top: -5px;
    }
 }
-@media (max-width: 1616px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 202% -55px;
-      background-size: 1250px;
-      background-color: #fbfbfb;
+@media (max-width: 1450px) {
+   .header__tel-number {
+      font-size: 1.5vw;
+   }
+   .flying-symbol_fly-1 {
+      transform: rotate(30deg) translateX(10.3vw) translateY(-5.5vw);
+   }
+   .flying-symbol_fly-2 {
+      transform: rotate(16deg) translateX(17.9vw) translateY(29.9vw);
+   }
+   .flying-symbol_fly-3 {
+      transform: rotate(-22deg) translateX(18.4vw) translateY(40vw);
    }
    .flying-symbol_fly-5 {
       display: none;
    }
    .my-name {
-      font-size: 60px;
+      font-size: 65px;
    }
-   .man {
-      top: -31px;
+   .presentation__color-figure {
+      width: 1160px;
+      top: -50px;
+      right: -390px;
    }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(2439%) translateY(1297%);
+   .presentation__man {
+      width: 547px;
+      right: 55px;
+      top: -5px;
    }
-}
-@media (max-width: 1560px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 230% -55px;
-      background-size: 1250px;
-      background-color: #fbfbfb;
+   .ability__descr, .swiper-slide__discr {
+      font-size: 1.2vw;
    }
-   .flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(384%) translateY(300%);
+   .swiper-slide__discr {
+      margin-top: 23px;
    }
-   .man {
-      right: 4.1%;
-   }
-   .promo__flying-symbol_fly-3 {
-      transform: rotate(20deg) translateX(1598%) translateY(-511%);
-   }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(2339%) translateY(1170%);
+   .modal-div {
+      margin-left: -160px;
    }
 }
-@media (max-width: 1520px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 252% -55px;
-      background-size: 1250px;
-      background-color: #fbfbfb;
-   }
-   .flying-symbol_fly-2 {
-      display: none;
-   }
-   .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(241%) translateY(1211%);
-   }
-   .man {
-      right: 3.3%;
-   }
-   .promo__flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(707%) translateY(273%);
-   }
-}
-@media (max-width: 1488px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 277% -55px;
-      background-size: 1250px;
-      background-color: #fbfbfb;
-   }
-   .promo__flying-symbol_fly-3 {
-      transform: rotate(20deg) translateX(1498%) translateY(-541%);
-   }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(2150%) translateY(1120%);
-   }
-}
-@media (max-width: 1440px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 331% -55px;
-      background-size: 1250px;
-      background-color: #fbfbfb;
-   }
-   .man {
-      right: 2.3%;
-   }
-}
-@media (max-width: 1400px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 301% -17px;
-      background-size: 1200px;
-      background-color: #fbfbfb;
-   }
-   .flying-symbol_fly-2 {
-      display: block;
-      transform: rotate(16deg) translateX(836%) translateY(671%);
-   }
-   .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(672%) translateY(1121%);
-   }
-   .man {
-      right: 1%;
-   }
-   .promo__flying-symbol_fly-1 {
-      transform: rotate(28deg) translateX(194%) translateY(35%);
-   }
-   .promo__flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(527%) translateY(293%);
-   }
-   .promo__flying-symbol_fly-3 {
-      transform: rotate(20deg) translateX(1398%) translateY(-471%);
-   }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(2000%) translateY(1040%);
-   }
-}
-@media (max-width: 1355px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 375% -17px;
-      background-size: 1200px;
-      background-color: #fbfbfb;
-   }
-   .man {
-      right: -0.8%;
-   }
-}
-@media (max-width: 1320px) {
+/*--- Tablet ---*/
+@media (max-width: 1270px) {
    .container {
-      margin: 0 7%;
+      margin: auto;
+      max-width: 945px;
    }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 216% 42px;
-      background-size: 1050px;
-      background-color: #fbfbfb;
-   }
-   .man {
-      right: -2.1%;
-   }
-   .promo__flying-symbol_fly-3 {
-      transform: rotate(20deg) translateX(1327%) translateY(-393%);
-   }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(1891%) translateY(950%);
-   }
-}
-@media (max-width: 1260px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 247% 42px;
-      background-size: 1050px;
-      background-color: #fbfbfb;
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(1489%) translateY(672%);
-   }
-}
-@media (max-width: 1260px) {
-   .container {
-      margin: 0 6%;
-   }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 277% 42px;
-      background-size: 1050px;
-      background-color: #fbfbfb;
-   }
-   .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(572%) translateY(1101%);
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(1402%) translateY(672%);
-   }
-   .promo__flying-symbol_fly-1 {
-      transform: rotate(28deg) translateX(110%) translateY(45%);
-   }
-   .promo__flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(360%) translateY(293%);
-   }
-   .promo__flying-symbol_fly-3 {
-      transform: rotate(20deg) translateX(1267%) translateY(-343%);
-   }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(1791%) translateY(910%);
-   }
-}
-@media (max-width: 1200px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 311% 42px;
-      background-size: 1050px;
-      background-color: #fbfbfb;
-   }
-}
-@media (max-width: 1170px) {
-   .container {
-      margin: 0 5%;
-   }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 267% 60px;
-      background-size: 1000px;
-      background-color: #fbfbfb;
-   }
-   .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(453%) translateY(1021%);
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(1341%) translateY(627%);
-   }
-   .man {
-      right: -3%;
-   }
-   .abilities__ability {
-      width: 24%;
-   }
-   .promo__flying-symbol_fly-1,
-   .promo__flying-symbol_fly-4 {
-      font-size: 32px;
-   }
-   .promo__flying-symbol_fly-1 {
-      transform: rotate(28deg) translateX(712%) translateY(-246%);
-   }
-   .promo__flying-symbol_fly-2 {
-      display: none;
-   }
-   .promo__flying-symbol_fly-3 {
-      transform: rotate(20deg) translateX(1093%) translateY(247%);
+   .header__tel-number {
       font-size: 25px;
    }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(1755%) translateY(1616%);
-   }
-}
-@media (max-width: 1120px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 333% 60px;
-      background-size: 1000px;
-      background-color: #fbfbfb;
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(1266%) translateY(562%);
-   }
-}
-@media (max-width: 1092px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 404% 60px;
-      background-size: 1000px;
-      background-color: #fbfbfb;
+   .flying-symbol_fly-1 {
+      transform: rotate(30deg) translateX(6.3vw) translateY(-3.5vw);
    }
    .flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(560%) translateY(761%);
+      transform: rotate(16deg) translateX(21.9vw) translateY(33.9vw);
    }
    .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(213%) translateY(1021%);
+      transform: rotate(-22deg) translateX(18.4vw) translateY(47vw);
    }
-}
-@media (max-width: 1066px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 588% 55px;
-      background-size: 1000px;
-      background-color: #fbfbfb;
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(1195%) translateY(518%);
+   .flying-symbol_fly-5 {
+      display: block;
+      transform: rotate(20deg) translateX(80vw) translateY(-27vw);
    }
    .my-name {
       font-size: 54px;
    }
-   .man {
-      top: -38px;
+   .presentation__man {
+      width: 530px;
+      right: 55px;
+      top: 2px;
    }
-}
-@media (max-width: 1044px) {
-   .container {
-      margin: 0 40px;
+   .presentation__color-figure {
+      width: 1050px;
+      top: 60px;
+      right: -320px;
    }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 835% 55px;
-      background-size: 1000px;
-      background-color: #fbfbfb;
+   .what-i-do {
+      padding-top: 98px;
+      padding-bottom: 105px;
    }
-}
-@media (max-width: 1030px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 1184% 55px;
-      background-size: 1000px;
-      background-color: #fbfbfb;
+   .section__title {
+      font-size: 54px;
    }
-}
-
-/*--- Tablet ---*/
-@media (max-width: 1024px) {
-   .header-left__menu-nav {
-      display: none;
-   }
-   .header-left__menu-btn {
-      display: block;
-   }
-   .presentation {
-      background: url('../img/color-figure.svg') no-repeat -596% 73px;
-      background-size: 1080px;
-      background-color: #fbfbfb;
-      padding-bottom: 229px;
-   }
-   .flying-symbol_fly-1 {
-      transform: rotate(30deg) translateX(189%) translateY(-9%);
-   }
-   .flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(605%) translateY(726%);
-   }
-   .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(268%) translateY(1112%);
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(1136%) translateY(569%);
-   }
-   .flying-symbol_fly-5 {
-      transform: rotate(14deg) translateX(504%) translateY(44%);
-   }
-   .my-name {
-      margin-top: 198px;
-      margin-bottom: 20px;
-   }
-   .btn_red {
-      padding: 23px 70px;
-   }
-   .man {
-      right: -4.8%;
-      top: -0.9%;
-   }
-
    .abilities {
       justify-content: space-evenly;
       margin-bottom: 81px;
@@ -1202,559 +1000,242 @@ html, body {
    .abilities__ability_layout {
       margin-bottom: 69px;
    }
-
-   .container-for-swiper {
-      margin-bottom: 86px;
+   .ability__descr {
+      font-size: 20px;
+   }
+   .my-works {
+      padding-top: 99px;
+      padding-bottom: 100px;
    }
    .swiper-container {
-      margin-bottom: 0;
-      height: 540px;
-   }
-   .swiper-slide {
-
-   }
-   .swiper-slide__img {
-      width: 100%;
+      height: 475px;
+      margin-bottom: 65px;
    }
    .swiper-slide__discr {
       font-size: 25px;
-      margin-top: 0px;
    }
-   .swiper-button-prev,
-   .swiper-button-next {
+   .swiper-button-prev, .swiper-button-next,
+   .promo__flying-symbol_fly-2, .promo__flying-symbol_fly-5 {
       display: none;
    }
    .swiper-pagination,
    .header-left__menu-nav_footer {
       display: block;
    }
-   .my-works {
-      padding-bottom: 101px;
+   .promo {
+      padding-top: 86px;
+      padding-bottom: 86px;
    }
-
+   .promo__flying-symbol_anim {
+      transform: translateX(46vw) translateY(24vw);
+   }
    .promo__flying-symbol_fly-1 {
-      transform: rotate(28deg) translateX(505%) translateY(-144%);
+      transform: rotate(28deg) translateX(5vw) translateY(1vw);
       font-size: 32px;
    }
-   .promo__flying-symbol_fly-2, .promo__flying-symbol_fly-5 {
-      display: none;
-   }
    .promo__flying-symbol_fly-3 {
-      transform: rotate(20deg) translateX(992%) translateY(364%);
+      transform: rotate(20deg) translateX(54vw) translateY(8.5vw);
       font-size: 25px;
    }
    .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(1256%) translateY(1232%);
+      transform: rotate(-22deg) translateX(64vw) translateY(52vw);
       font-size: 40px;
    }
-
-   .header-left__menu-nav_footer {
-      margin-top: 106px;
-   }
-   .footer__contacts {
-      margin-top: 24px;
-   }
-   .footer__interaction {
-      margin-top: 19px;
-      margin-right: 0;
-   }
-   .modal-div {
-      left: 42%;
-   }
-}
-@media (max-width: 1012px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -487% 73px;
-      background-size: 1080px;
-      background-color: #fbfbfb;
-   }
-   .promo__text-top {
-      font-size: 42px;
-   }
-   .promo__description {
-      padding-right: 118px;
-   }
-}
-@media (max-width: 994px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -362% 73px;
-      background-size: 1080px;
-      background-color: #fbfbfb;
-      padding-bottom: 239px;
-   }
-   .my-name {
-      font-size: 48px;
-   }
-   .my-description {
-      font-size: 22px;
-   }
-}
-@media (max-width: 974px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -279% 73px;
-      background-size: 1080px;
-      background-color: #fbfbfb;
-   }
-}
-@media (max-width: 952px) {
-   .container {
-      margin: 0 4%;
-   }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -220% 73px;
-      background-size: 1080px;
-      background-color: #fbfbfb;
-   }
-   .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(215%) translateY(1078%);
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(1058%) translateY(538%);
-   }
-   .man {
-      right: -5.5%;
-   }
-   .promo__flying-symbol_fly-3 {
-      transform: rotate(20deg) translateX(920%) translateY(364%);
-   }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(1216%) translateY(1170%);
-   }
-   .promo__text-top {
-      font-size: 39px;
-   }
-   .promo__description {
-      padding-right: 55px;
-   }
-}
-@media (max-width: 926px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -165% 73px;
-      background-size: 1080px;
-      background-color: #fbfbfb;
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(1013%) translateY(495%);
-   }
-}
-@media (max-width: 894px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -133% 76px;
-      background-size: 1080px;
-      background-color: #fbfbfb;
-      padding-bottom: 245px;
-   }
-   .my-name {
+   .promo__title {
       font-size: 45px;
    }
-   .my-description {
-      font-size: 21px;
-   }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(1149%) translateY(1123%);
-   }
-}
-@media (max-width: 866px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -832% 76px;
-      background-size: 900px;
-      background-color: #fbfbfb;
-      padding-bottom: 172px;
-   }
-   .flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(589%) translateY(685%);
-   }
-   .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(172%) translateY(1039%);
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(968%) translateY(485%);
-   }
-   .man {
-      height: auto;
-      width: 500px;
-   }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(1099%) translateY(1070%);
-   }
-   .promo__text-top {
-      font-size: 36px;
-   }
    .promo__description {
-      font-size: 17px;
-      padding-right: 37px;
-   }
-}
-@media (max-width: 846px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -512% 76px;
-      background-size: 900px;
-      background-color: #fbfbfb;
-      padding-bottom: 185px;
-   }
-   .my-name {
-      margin-top: 185px;
-   }
-   .man {
-      width: 490px;
-      top: 1.1%;
-   }
-   .menu-nav__menu-list_footer {
-      font-size: 17px;
-   }
-   .footer__tel a, .footer__mail a {
-      font-size: 22px;
-   }
-}
-@media (max-width: 830px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -380% 76px;
-      background-size: 900px;
-      background-color: #fbfbfb;
-   }
-   .btn_red {
-      padding: 23px 70px;
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(922%) translateY(485%);
-   }
-   .what-i-do__title, .my-works__top-text {
-      font-size: 50px;
-   }
-   .swiper-container {
-      height: 470px;
-   }
-}
-@media (max-width: 812px) {
-   .container {
-      margin: 0 3.5%;
-   }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 299px 76px;
-      background-size: 800px;
-      background-color: #fbfbfb;
-      padding-bottom: 167px;
-   }
-   .my-name {
-      font-size: 37px;
-   }
-   .my-description {
-      font-size: 17px;
-   }
-   .btn_red {
-      padding: 16px 70px;
-   }
-   .man {
-      width: 451px;
-      right: -6%;
-   }
-   .promo__flying-symbol_fly-3 {
-      transform: rotate(20deg) translateX(875%) translateY(364%);
-   }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(1026%) translateY(1036%);
-   }
-}
-@media (max-width: 772px) {
-   .header__tel-number {
-      font-size: 23px;
-   }
-   .btn_blank {
-      font-size: 14px;
-   }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 258px 76px;
-      background-size: 800px;
-      background-color: #fbfbfb;
-   }
-   .flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(503%) translateY(625%);
-   }
-   .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(132%) translateY(932%);
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(843%) translateY(419%);
-   }
-   .promo__text-top {
-      font-size: 33px;
-   }
-   .promo__description {
-      font-size: 15px;
-      padding-right: 55px;
-   }
-   .promo__flying-symbol_fly-3 {
-      transform: rotate(20deg) translateX(755%) translateY(364%);
-   }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(958%) translateY(981%);
-   }
-}
-@media (max-width: 726px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 263px 54px;
-      background-size: 700px;
-      background-color: #fbfbfb;
-      padding-bottom: 161px;
-   }
-   .flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(488%) translateY(534%);
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(784%) translateY(327%);
-   }
-   .my-name {
-      margin-top: 140px;
-   }
-   .my-description {
-      margin-bottom: 35px;
-   }
-   .man {
-      width: 420px;
-      top: -19px;
-   }
-   .what-i-do {
-      padding-bottom: 80px;
-   }
-   .what-i-do__title, .my-works__top-text {
-      font-size: 45px;
-      margin-bottom: 75px;
-      margin-top: 65px;
-   }
-   .abilities {
-      margin-bottom: 60px;
-   }
-   .ability__descr {
       font-size: 18px;
    }
-   .swiper-container {
-      height: 400px;
-   }
-   .swiper-slide__img {
-      padding-bottom: 10px;
-   }
-   .swiper-slide__discr {
-      font-size: 20px;
-   }
-   .my-works {
-      padding-bottom: 80px;
-   }
-   .promo {
-      padding-top: 50px;
-      padding-bottom: 55px;
-   }
-   .promo__flying-symbol_fly-1 {
-      transform: rotate(28deg) translateX(469%) translateY(-159%);
-      font-size: 30px;
-   }
-   .promo__flying-symbol_fly-3 {
-      transform: rotate(20deg) translateX(682%) translateY(274%);
-   }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(955%) translateY(878%);
-   }
-   .promo__text-top {
-      font-size: 30px;
-   }
-   .promo__description {
-      font-size: 15px;
-      padding-right: 0;
+   .promo__description::before {
+      content: '* ';
+      position: static;
    }
    .header-left__menu-nav_footer {
-      margin-top: 70px;
-      margin-bottom: 75px;
+      margin-top: 109px;
+      margin-bottom: 92px;
    }
-   .footer__contacts {
-      margin-top: 0;
-      padding-left: 0;
-   }
-   .footer__tel a, .footer__mail a {
-      font-size: 20px;
-   }
-   .footer__mail {
-      margin-bottom: 0;
-   }
-   .footer__interaction {
-      margin-top: 0;
+   .modal-div {
+      margin-left: -170px;
    }
 }
-@media (max-width: 700px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 240px 54px;
-      background-size: 700px;
-      background-color: #fbfbfb;
-      padding-bottom: 138px;
+@media (max-width: 1024px) {
+   .container {
+      max-width: 92.18%;
    }
-   .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(130%) translateY(782%);
+   .mobile-off,
+   .flying-symbol_fly-5 {
+      display: none;
    }
-   .my-name, .what-i-do__title, .my-works__top-text {
-      font-size: 34px;
+   .header-left__menu-btn,
+   .flying-symbol_fly-tablet {
+      display: inline-block;
    }
-   .my-description {
-      font-size: 16px;
-   }
-   .man {
-      width: 400px;
-      top: -23px;
-   }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(860%) translateY(833%);
-   }
-}
-@media (max-width: 660px) {
    .header__tel-number {
-      font-size: 20px;
-   }
-   .btn_blank {
-      padding: 10px 34px;
+      margin-right: 31px;
    }
    .presentation {
-      background: url(../img/color-figure.svg) no-repeat 238px 54px;
-      background-size: 620px;
-      background-color: #fbfbfb;
-      padding-bottom: 141px;
+      padding-bottom: 229px;
    }
-   .flying-symbol {
-      font-size: 30px;
+   .flying-symbol_fly-1 {
+      transform: rotate(30deg) translateX(8.5vw) translateY(-0.5vw);
    }
    .flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(771%) translateY(840%);
+      transform: rotate(16deg) translateX(19.3vw) translateY(46.9vw);
    }
    .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(131%) translateY(1011%);
+      transform: rotate(-22deg) translateX(15.3vw) translateY(55.5vw);
    }
    .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(926%) translateY(373%);
-      font-size: 25px;
+      transform: rotate(-12deg) translateX(83.9vw) translateY(21.2vw);
+   }
+   .flying-symbol_fly-tablet {
+      transform: rotate(14deg) translateX(42.9vw) translateY(1.1vw);
    }
    .my-name {
-      margin-top: 120px;
+      margin-top: 199px;
+      margin-bottom: 20px;
    }
    .btn_red {
-      padding: 14px 42px;
-      font-size: 16px;
+      padding: 23px 96px;
+      max-width: max-content;
    }
-   .man {
-      width: 380px;
+   .presentation__color-figure {
+      width: 1120px;
+      top: 61px;
+      right: -442px;
+      transform: rotate(5deg);
    }
-   .what-i-do__title, .my-works__top-text {
-      margin-bottom: 60px;
-      margin-top: 50px;
-   }
-   .abilities__ability_layout {
-      margin-bottom: 50px;
-   }
-   .ability__descr, .swiper-slide__discr {
-      font-size: 16px;
-   }
-   .promo__text-top {
-      font-size: 27px;
-   }
-   .promo__description {
-      font-size: 15px;
-      padding-left: 25px;
-   }
-   .menu-nav__menu-list_footer {
-      font-size: 15px;
-   }
-   .btn_blank {
-      font-size: 16px;
-   }
-   .btn_blank_footer {
-      padding: 12px 40px;
-      margin-bottom: 20px;
-   }
-   .basement__p {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      font-size: 12px;
-   }
-}
-@media (max-width: 624px) {
-   .header {
-      padding-top: 20px;
-      padding-bottom: 30px;
-   }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 220px 54px;
-      background-size: 620px;
-      background-color: #fbfbfb;
-   }
-   .my-name, .what-i-do__title, .my-works__top-text {
-      font-size: 30px;
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(882%) translateY(395%);
-   }
-   .my-description {
-      font-size: 15px;
-   }
-   .man {
-      width: 360px;
+   .presentation__man {
+      width: 563px;
+      right: -50px;
       top: -5px;
    }
    .what-i-do {
-      padding-bottom: 50px;
-   }
-   .swiper-container {
-      height: 340px;
-   }
-   .header-left__menu-nav_footer {
-      margin-top: 50px;
-      margin-bottom: 50px;
-   }
-   .promo__flying-symbol_fly-3 {
-      transform: rotate(20deg) translateX(624%) translateY(267%);
-      font-size: 25px;
-   }
-   .promo__flying-symbol_fly-4 {
-      transform: rotate(-22deg) translateX(872%) translateY(933%);
-   }
-   .promo__description {
-      padding-left: 10px;
-   }
-}
-@media (max-width: 600px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat 226px 54px;
-      background-size: 570px;
-      background-color: #fbfbfb;
+      padding-top: 85px;
       padding-bottom: 105px;
    }
-   .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(854%) translateY(365%);
-   }
-   .man {
-      width: 330px;
+   .what-i-do__title {
+      margin-bottom: 88px;
    }
    .abilities {
-      margin-bottom: 40px;
+      margin-bottom: 74px;
    }
    .abilities__ability_layout {
-      margin-bottom: 35px;
+      margin-bottom: 62px;
+   }
+   .ability__descr {
+      margin-top: 93px;
+      line-height: 28px;
+   }
+   .btn_red_what-i-do {
+      padding: 23px 87px;
    }
    .my-works {
-      padding-bottom: 60px;
+      padding-top: 90px;
+      padding-bottom: 102px;
    }
-   .container-for-swiper {
-      margin-bottom: 50px;
+   .my-works__title {
+      margin-bottom: 97px;
+      margin-top: 0;
    }
-   .promo__text-top {
-      font-size: 25px;
-      margin: 0 auto 25px auto;
+   .swiper-container {
+      height: 539px;
+      margin-bottom: 86px;
    }
-   .promo__description {
-      padding-left: 20px;
+   .swiper-slide__discr {
+      margin-top: 17px;
+      font-size: 2.45vw;
+   }
+   .promo {
+      padding-top: 74px;
+      padding-bottom: 83px;
+   }
+   .promo__flying-symbol_fly-1 {
+      transform: rotate(28deg) translateX(14.4vw) translateY(-5.4vw);
+   }
+   .promo__flying-symbol_fly-3 {
+      transform: rotate(20deg) translateX(57.1vw) translateY(10.6vw);
+   }
+   .promo__flying-symbol_fly-4 {
+      transform: rotate(-22deg) translateX(68.7vw) translateY(57.8vw);
+   }
+   .promo__title {
+      font-size: 4.4vw;
+      margin: 0 auto 30px auto;
+   }
+   .promo__description::before {
+      left: 11%;
+   }
+   .header-left__menu-nav_footer {
+      margin-top: 92px;
+      margin-bottom: 92px;
+   }
+   .footer__interaction {
+      margin-right: 0;
+   }
+   .modal-div {
+      margin-left: -185px;
    }
 }
-@media (max-width: 576px) {
+@media (max-width: 960px) {
    .container {
-      margin: 0 20px;
+      max-width: 95.83%;
    }
-   .header__tel-number {
-      font-size: 25px;
-      margin-right: 120px;
+   .presentation {
+      padding-bottom: 191px;
+   }
+   .flying-symbol_fly-2 {
+      transform: rotate(16deg) translateX(19vw) translateY(46vw);
+   }
+   .flying-symbol_fly-3 {
+      transform: rotate(-22deg) translateX(14vw) translateY(60vw);
+   }
+   .flying-symbol_fly-tablet {
+      transform: rotate(14deg) translateX(38vw) translateY(1vw);
+   }
+   .my-name {
+      font-size: 45px;
+      margin-top: 166px;
+      margin-bottom: 20px;
+   }
+   .my-description {
+      font-size: 19px;
+   }
+   .btn_red {
+      padding: 19px 70px;
+   }
+   .section__title {
+      font-size: 5.63vw;
+   }
+   .presentation__color-figure {
+      width: 960px;
+      top: 48px;
+      right: -383px;
+      transform: rotate(5deg);
+   }
+   .presentation__man {
+      width: 480px;
+      right: -50px;
+      top: -5px;
+   }
+   .promo__description {
+      font-size: 17px;
+   }
+   .promo__flying-symbol_fly-3 {
+      transform: rotate(20deg) translateX(57vw) translateY(12vw);
+   }
+   .promo__flying-symbol_fly-4 {
+      transform: rotate(-22deg) translateX(70vw) translateY(59vw);
+   }
+   .modal-div {
+      margin-left: -190px;
+   }
+}
+@media (max-width: 768px) {
+   .container {
+      max-width: 728px;
+      padding: 0 20px 0 20px;
    }
    .btn_blank_mobile {
       font-size: 0;
@@ -1769,62 +1250,74 @@ html, body {
       transform: none;
    }
    .presentation {
-      background: url(../img/color-figure.svg) no-repeat -173px 45px;
-      background-size: 1000px;
-      background-color: #fbfbfb;
-      padding-bottom: 540px;
+      padding-bottom: 430px;
    }
    .flying-symbol_fly-1 {
-      transform: rotate(30deg) translateX(448%) translateY(-149%);
+      transform: rotate(30deg) translateX(21vw) translateY(13vw);
    }
    .flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(531%) translateY(390%);
+      transform: rotate(16deg) translateX(19vw) translateY(37vw);
    }
    .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(788%) translateY(301%);
+      transform: rotate(-22deg) translateX(16vw) translateY(19vw);
    }
    .flying-symbol_fly-4 {
-      transform: rotate(18deg) translateX(824%) translateY(-295%);
+      transform: rotate(-12deg) translateX(37vw) translateY(15vw);
    }
-
-   .my-name, .my-description, .btn_red_presentation {
-      position: absolute;
-      margin: 0;
-   }
-   .my-name {
-      top: 104%;
-      left: 20%;
-   }
-   .my-description {
-      top: 115%;
-      left: 21%;
-   }
-   .btn_red_presentation {
-      top: 124%;
-      left: 31%;
-   }
+   .flying-symbol_fly-tablet,
    .promo__flying-symbol_fly-1, .promo__flying-symbol_fly-3, .promo__flying-symbol_fly-4,
-   .promo__text-top br {
+   .promo__title br {
       display: none;
    }
-   .what-i-do__title {
-      margin-top: 230px;
-   }
-   .my-name, .what-i-do__title, .my-works__top-text {
+   .my-name {
+      position: absolute;
       font-size: 40px;
+      top: 280px;
+      left: 50%;
+      margin-left: -175px;
+      z-index: 3;
    }
    .my-description {
-      font-size: 18px;
+      position: absolute;
+      top: 515px;
+      left: 50%;
+      margin-left: -180px;
+      z-index: 3;
    }
-   .btn_red {
-      padding: 16px 55px;
+   .btn_red_presentation {
+      position: absolute;
+      top: 570px;
+      left: 50%;
+      margin-left: -135px;
+      z-index: 3;
    }
-   .man {
-      width: 430px;
-      top: 35px;
+   .presentation__color-figure {
+      width: 930px;
+      top: -20px;
+      right: -190px;
+      transform: rotate(5deg);
+   }
+   .presentation__man {
+      width: 360px;
+      right: -25px;
+      top: 7px;
+   }
+   .what-i-do {
+      padding-top: 265px;
+      padding-bottom: 105px;
+   }
+   .section__title {
+      font-size: 40px;
+   }
+   .what-i-do__title {
+      margin-bottom: 70px;
    }
    .abilities {
-      margin-bottom: 0;
+      margin-bottom: 40px;
+   }
+   .abilities__ability {
+      margin-bottom: 37px;
+      width: 60%;
    }
    .abilities__ability {
       margin-bottom: 37px;
@@ -1839,23 +1332,29 @@ html, body {
    .swiper-container {
       height: 520px;
    }
+   .swiper-slide__discr {
+      font-weight: 500;
+   }
    .swiper-pagination-bullet {
       width: 15px;
       height: 15px;
    }
-   .promo__description {
-      padding-left: 0;
+   .promo__title {
+      font-size: 28px;
    }
    .container_footer {
       flex-wrap: wrap;
    }
    .header-left__menu-nav_footer {
       width: 100%;
+      margin-top: 50px;
+      margin-bottom: 50px;
    }
    .footer__mail {
       margin: 0 auto 0 0;
    }
    .footer__contacts {
+      padding-left: 0;
       margin-bottom: 26px;
       width: 100%;
    }
@@ -1866,370 +1365,70 @@ html, body {
    .btn_blank_footer {
       margin-bottom: 50px;
    }
-}
-@media (max-width: 540px) {
-   .header__tel-number {
-      margin-right: 100px;
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(18deg) translateX(740%) translateY(-295%);
-   }
-   .my-name {
-      top: 104%;
-      left: 18%;
-   }
-   .my-description {
-      top: 115%;
-      left: 19%;
-   }
-   .btn_red_presentation {
-      top: 124%;
-      left: 30%;
-   }
-}
-@media (max-width: 490px) {
-   .header__tel-number {
-      margin-right: 80px;
-   }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -195px 63px;
-      background-size: 960px;
-      background-color: #fbfbfb;
-      padding-bottom: 530px;
-   }
-   .my-name, .what-i-do__title, .my-works__top-text {
-      font-size: 35px;
-   }
-   .btn_red_presentation {
-      top: 124%;
-      left: 28%;
-   }
-   .flying-symbol_fly-1 {
-      transform: rotate(30deg) translateX(296%) translateY(-59%);
-   }
-   .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(617%) translateY(241%);
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(18deg) translateX(672%) translateY(-163%);
-   }
-   .man {
-      width: 410px;
-      top: 49px;
-      right: -7.5%;
-   }
-   .my-description, .ability__descr, .swiper-slide__discr {
-      font-size: 16px;
-   }
-   .swiper-container {
-      height: 460px;
-   }
-}
-@media (max-width: 440px) {
-   .header__tel-number {
-      margin-right: 55px;
-   }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -202px 60px;
-      background-size: 960px;
-      background-color: #fbfbfb;
-      padding-bottom: 520px;
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(18deg) translateX(592%) translateY(-163%);
-   }
-   .my-name {
-      top: 104%;
-      left: 15%;
-   }
-   .my-description {
-      top: 115%;
-      left: 15%;
-   }
-   .btn_red_presentation {
-      padding: 16px 32%;
-      top: 124%;
-      left: 5%;
-   }
-   .man {
-      width: 390px;
-      top: 62px;
-      right: -8%;
-   }
-   .what-i-do__title {
-      margin-top: 220px;
-   }
-   .btn_red_what-i-do {
-      padding: 16px 19%;
-   }
-   .btn_red_my-works {
-      padding: 16px 20%;
-   }
-   .swiper-container {
-      height: 410px;
-   }
-}
-@media (max-width: 430px) {
-   .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(553%) translateY(217%);
-   }
-   .btn_red {
-      padding: 16px 31%;
-      max-width: 400px;
-   }
-   .btn_red_what-i-do {
-      padding: 16px 32%;
-   }
-   .btn_red_my-works {
-      padding: 16px 33%;
-   }
-}
-@media (max-width: 420px) {
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -190px 74px;
-      background-size: 860px;
-      background-color: #fbfbfb;
-      padding-bottom: 500px;
-   }
-   .man {
-      width: 370px;
-      top: 66px;
-   }
-   .my-name {
-      top: 104%;
-      left: 13%;
-   }
-   .my-description {
-      top: 115%;
-      left: 13%;
-   }
-   .btn_red_presentation {
-      padding: 16px 31%;
-      top: 124%;
-      left: 5.5%;
-   }
-   .btn_red_what-i-do, .btn_red_what-i-do {
-      padding: 16px 34%;
-   }
-   .btn_red_what-i-do {
-      padding: 16px 32%;
-   }
-   .btn_red_my-works {
-      padding: 16px 33%;
-   }
-}
-@media (max-width: 410px) {
-   .header__tel-number {
-      margin-right: 40px;
-   }
-   .btn_red_what-i-do {
-      padding: 16px 30%;
-   }
-   .my-name {
-      top: 104%;
-      left: 12%;
-   }
-   .btn_red_presentation {
-      padding: 16px 31%;
-      top: 124%;
-      left: 5%;
-   }
-}
-@media (max-width: 400px) {
-   .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(513%) translateY(217%);
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(18deg) translateX(531%) translateY(-87%);
-   }
-   .btn_red_my-works {
-      padding: 16px 31%;
-   }
-   .my-name, .what-i-do__title, .my-works__top-text {
-      font-size: 30px;
-   }
-   .my-name {
-      top: 104%;
-      left: 16%;
-   }
-   .my-description {
-      top: 115%;
-      left: 11%;
-   }
-   .promo__text-top {
-      font-size: 28px;
-   }
-}
-@media (max-width: 390px) {
-   .header__tel-number {
-      margin-right: 30px;
-   }
-   .btn_red_presentation {
-      padding: 16px 30%;
-   }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -183px 77px;
-      background-size: 810px;
-      background-color: #fbfbfb;
-   }
-   .man {
-      right: -9%;
-   }
-   .abilities__ability {
-      width: 60%;
-   }
-   .btn_blank_footer {
-      padding: 20px 75px;
-      border: 1px solid #ff4e2e;
-      background-color: #ff4e2e;
-      color: white;
-   }
-}
-@media (max-width: 370px) {
-   .header__tel-number {
-      margin-right: 50px;
-      font-size: 18px;
-   }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -158px 84px;
-      background-size: 740px;
-      background-color: #fbfbfb;
-      padding-bottom: 465px;
-   }
-   .man {
-      width: 340px;
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(18deg) translateX(488%) translateY(-21%);
-   }
-   .my-name {
-      top: 104%;
-      left: 14%;
-   }
-   .my-description {
-      top: 115%;
-      left: 8%;
-   }
-   .btn_red_what-i-do {
-      padding: 16px 28%;
-   }
-   .abilities__ability {
-      width: 67%;
-   }
-}
-@media (max-width: 350px) {
-   .header__tel-number {
-      margin-right: 40px;
-   }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -145px 80px;
-      background-size: 700px;
-      background-color: #fbfbfb;
-      padding-bottom: 442px;
-   }
-   .man {
-      width: 320px;
-   }
-   .flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(418%) translateY(420%);
-   }
-   .my-name {
-      top: 104%;
-      left: 12%;
-   }
-   .my-description {
-      top: 115%;
-      left: 19%;
-      max-width: 220px;
-      text-align: center;
-   }
-   .btn_red_presentation {
-      padding: 16px 28%;
-      top: 128%;
-      left: 5.5%;
-   }
-   .what-i-do__title {
-      margin-top: 210px;
-   }
-   .btn_red_my-works {
-      padding: 16px 28%;
-   }
-   .swiper-container {
-      height: 350px;
-   }
-}
-@media (max-width: 340px) {
-   .flying-symbol_fly-1 {
-      transform: rotate(30deg) translateX(246%) translateY(21%);
-   }
-   .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(393%) translateY(167%);
-   }
-   .flying-symbol_fly-4 {
-      transform: rotate(18deg) translateX(464%) translateY(1%);
-   }
-   .my-name {
-      top: 104%;
-      left: 11%;
-   }
-   .btn_red_what-i-do {
-      padding: 16px 26%;
-   }
-}
-@media (max-width: 330px) {
-   .header__tel-number {
-      margin-right: 30px;
-   }
-   .presentation {
-      background: url(../img/color-figure.svg) no-repeat -137px 79px;
-      background-size: 650px;
-      background-color: #fbfbfb;
-      padding-bottom: 418px;
-   }
-   .man {
+   .modal-div {
+      margin-left: -110px;
+      padding: 0;
       width: 300px;
    }
-   .my-name, .what-i-do__title, .my-works__top-text {
-      text-align: center;
+   .modal-div::before, .modal-div::after {
+      display: none;
    }
-   .my-name {
-      top: 104%;
-      left: 10%;
+   .modal_close {
+      top: -2px;
+      right: -1px;
    }
-   .my-description {
-      top: 115%;
-      left: 18%;
+   .fa-times {
+      color: black;
    }
-   .btn_red_presentation {
-      top: 129%;
-      left: 5%;
+   .form-callback br {
+      display: block;
+   }
+   .form__input-name, .form__input-tel, .form__input-email {
+      margin: 0 10px 10px 10px;
+   }
+   .form__privacy-policy {
+      margin: 0 0 10px 10px;
+   }
+   .privacy-policy__link {
+      margin-left: 10px;
+   }
+   .form__or-call {
+      margin: 0 10px 15px 10px;
+   }
+   .form__submit {
+      padding: 13px 30px;
+      margin-left: 15px;
    }
 }
 @media (max-width: 320px) {
    .header {
-      padding-top: 25px;
-      padding-bottom: 25px;
+      background-color: #fbfbfb;
+      padding-top: 24px;
+      padding-bottom: 26px;
    }
    .fa-bars {
       font-size: 28px;
    }
    .header__tel-number {
-      margin-right: 29px;
+      font-size: 18px;
    }
    .btn_blank_mobile {
       padding: 15px;
-      background-size: 30px;
    }
+
+
    .presentation {
-      background: url(../img/color-figure.svg) no-repeat -130px 53px;
-      background-size: 630px;
-      background-color: #fbfbfb;
       padding-bottom: 388px;
    }
-   .man {
+   .presentation__man {
       width: 295px;
-      right: -29px;
+      right: -30px;
       top: 42px;
+   }
+   .presentation__color-figure {
+      width: 660px;
+      top: 47px;
+      right: -191px;
    }
    .flying-symbol {
       font-size: 25px;
@@ -2249,55 +1448,82 @@ html, body {
       transform: rotate(18deg) translateX(721%) translateY(-78%);
    }
    .my-name {
-      top: 401px;
-      left: 25px;
+      font-size: 30px;
+      top: 234px;
+      margin-left: -135px;
    }
    .my-description {
-      top: 445px;
-      left: 49px;
-      line-height: 23px;
+      font-size: 16px;
+      top: 446px;
+      margin-left: -109px;
+      max-width: 215px;
+      text-align: center;
+      line-height: 22px;
+   }
+   .btn_red {
+      padding: 17px 82px;
    }
    .btn_red_presentation {
-      top: 515px;
-      left: 20px;
-      padding: 18px 83px;
+      font-size: 16px;
+      top: 516px;
+      margin-left: -139px;
+   }
+
+
+   .what-i-do {
+      padding-top: 224px;
+      padding-bottom: 51px;
+   }
+   .section__title {
+      font-size: 30px;
+      text-align: center;
    }
    .what-i-do__title {
-      margin-top: 225px;
-      margin-bottom: 42px;
+      margin-bottom: 43px;
    }
    .abilities {
-      margin-bottom: 21px;
+      margin-bottom: 17px;
    }
    .abilities__ability {
       background-size: 60px;
       width: 75%;
    }
+   .ability__descr {
+      margin-top: 69px;
+      margin-bottom: 0;
+      font-size: 16px;
+      line-height: 25px;
+   }
    .abilities__ability_layout {
-      margin-bottom: 54px;
+      margin-bottom: 48px;
    }
    .abilities__ability_adaptive, .abilities__ability_frontend {
-      margin-bottom: 58px;
-   }
-   .ability__descr {
-      margin-top: 75px;
-      margin-bottom: 0;
+      margin-bottom: 52px;
    }
    .btn_red_what-i-do {
-      padding: 19px 72px;
+      padding: 17px 66px;
    }
-   .my-works__top-text {
+
+
+   .my-works {
+      padding-bottom: 52px;
+      padding-top: 42px;
+   }
+   .my-works__title {
       margin-bottom: 39px;
-      margin-top: 43px;
    }
    .container-for-swiper {
-      margin-bottom: 33px;
+      margin-bottom: 0;
    }
    .swiper-container {
       height: 360px;
+      margin-bottom: 31px;
    }
    .swiper-slide__img {
       padding-bottom: 46px;
+   }
+   .swiper-slide__discr {
+      margin-top: 0;
    }
    .swiper-pagination-bullets .swiper-pagination-bullet {
       margin: 0 8px;
@@ -2307,31 +1533,43 @@ html, body {
       height: 11px;
    }
    .btn_red_my-works {
-      padding: 18px 77px;
+      padding: 18px 79px;
+      font-size: 16px;
    }
-   .my-works {
-      padding-bottom: 50px;
-   }
+
+
    .promo {
-      padding-top: 43px;
-      padding-bottom: 44px;
+      padding-top: 41px;
+      padding-bottom: 45px;
    }
-   .promo__text-top {
+   .promo__title {
       margin: 0 auto 34px auto;
       line-height: 40px;
    }
    .promo__description {
+      font-size: 15px;
       line-height: 29px;
    }
+
+
    .header-left__menu-nav_footer {
-      margin-top: 47px;
+      margin-top: 45px;
       margin-bottom: 40px;
    }
+   .menu-nav__menu-list_footer {
+      font-size: 15px;
+   }
    .menu__item_footer:first-child, .menu__item_footer:nth-last-child(2) {
-      margin-bottom: 14px;
+      margin-bottom: 15px;
+   }
+   .footer__contacts {
+      margin-bottom: 25px;
    }
    .footer__tel {
       margin-bottom: 23px;
+   }
+   .footer-tel__number, .footer-mail__text {
+      font-size: 20px;
    }
    .btn_blank_footer {
       padding: 17px 76px;
@@ -2341,5 +1579,8 @@ html, body {
    }
    .footer__interaction {
       margin-bottom: 47px;
+   }
+   .modal-div {
+      margin-left: -134px;
    }
 }

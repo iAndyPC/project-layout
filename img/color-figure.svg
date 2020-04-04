@@ -4,17 +4,26 @@
 	 viewBox="0 0 1280 1024" style="enable-background:new 0 0 1280 1024;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:url(#SVGID_2_);}
 </style>
 <g>
 	
-		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="647.4767" y1="140.843" x2="691.1329" y2="865.8168" gradientTransform="matrix(1.0455 -3.620000e-02 3.620000e-02 -1.0288 -1.0598 1024.8416)">
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="645.1056" y1="922.2919" x2="691.0409" y2="159.4697" gradientTransform="matrix(1.0455 -3.620000e-02 -3.620000e-02 1.0288 36.009 -28.6497)">
 		<stop  offset="0" style="stop-color:#F26127"/>
 		<stop  offset="0.1583" style="stop-color:#F35930"/>
 		<stop  offset="0.4156" style="stop-color:#F54548"/>
 		<stop  offset="0.7383" style="stop-color:#F8246F"/>
 		<stop  offset="0.7448" style="stop-color:#F82370"/>
 	</linearGradient>
-	<path class="st0" d="M1213,766c-52.9,49.8-409,53-409,53l0,0c-24.9,14.9-426.4,11.3-432,14c-50.1,23.8-164.7-60-196-150
-		c-34.9-100.2,35.1-202.8,83-273c50.9-74.6,233.3-342.1,488.6-326.3C1112.6,106.2,1296.4,687.6,1213,766z"/>
+	<path class="st0" d="M1186,791.4c-7.8,7.3-17.1,12.8-27.3,15.9C975.5,864.5,657.2,935.5,372,833c-151.7-54.5-185.2-118.9-196-150
+		c-34.9-100.2,35.1-202.8,83-273c50.9-74.6,233.3-342.1,488.6-326.3c365,22.5,548.8,603.9,465.4,682.3L1186,791.4z"/>
 </g>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="1068" y1="930" x2="1068" y2="930">
+	<stop  offset="0" style="stop-color:#F26127"/>
+	<stop  offset="0.1583" style="stop-color:#F35930"/>
+	<stop  offset="0.4156" style="stop-color:#F54548"/>
+	<stop  offset="0.7383" style="stop-color:#F8246F"/>
+	<stop  offset="0.7448" style="stop-color:#F82370"/>
+</linearGradient>
+<path class="st1" d="M1068,930"/>
 </svg>

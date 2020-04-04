@@ -2,6 +2,27 @@ $(document).ready(function(){
 
    $('.flying-symbol').removeClass('flying-symbol_anim promo__flying-symbol_anim');
 
+   //Mobile menu
+   $(function() {
+      var $menu_popup = $('.mobile-menu__popup');
+      $(".header-left__menu-btn, .mobile-menu__close, .mobile-menu-item__link").click(function(){
+         $menu_popup.slideToggle(300, function(){
+            if ($menu_popup.is(':hidden')) {
+               $('body').removeClass('body_pointer');
+            } else {
+               $('body').addClass('body_pointer');
+            }
+         });
+         return false;
+      });
+      $(document).on('click', function(e){
+         if (!$(e.target).closest('.mobile-menu').length){
+            $('body').removeClass('body_pointer');
+            $menu_popup.slideUp(300);
+         }
+      });
+   });
+
    //Modal Window
    /* зaсунем срaзу все элементы в переменные, чтoбы скрипту не прихoдилoсь их кaждый рaз искaть при кликaх */
    var overlay = $('.overlay'); // пoдлoжкa, дoлжнa быть oднa нa стрaнице
@@ -52,7 +73,7 @@ $(document).ready(function(){
             slidesPerView: 2,
             spaceBetween: 35,
          },
-         1025: {
+         1271: {
             slidesPerView: 3,
             spaceBetween: 35,
          },
@@ -101,7 +122,7 @@ $(document).ready(function(){
          submitHandler(form) {
             let th = $(form);
 
-            console.log(th)
+            console.log(th);
 
             $.ajax({
                type: 'POST',
