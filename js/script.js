@@ -4,8 +4,8 @@ $(document).ready(function(){
 
    //Mobile menu
    $(function() {
-      var $menu_popup = $('.mobile-menu__popup');
-      $(".header-left__menu-btn, .mobile-menu__close, .mobile-menu-item__link").click(function(){
+      var $menu_popup = $('.header-left__menu-nav_mobile');
+      $(".header-left__menu-btn, .header-left__menu-close, .menu-item__link_mobile").click(function(){
          $menu_popup.slideToggle(300, function(){
             if ($menu_popup.is(':hidden')) {
                $('body').removeClass('body_pointer');
@@ -16,7 +16,7 @@ $(document).ready(function(){
          return false;
       });
       $(document).on('click', function(e){
-         if (!$(e.target).closest('.mobile-menu').length){
+         if (!$(e.target).closest('.menu').length){
             $('body').removeClass('body_pointer');
             $menu_popup.slideUp(300);
          }

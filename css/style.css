@@ -87,6 +87,16 @@ html, body {
 .header-left__menu-nav {
 
 }
+.header-left__menu-close {
+   display: none;
+   width: 28px;
+   height: 28px;
+   background: url(../img/close.png) 0 0 repeat;
+   position: absolute;
+   right: 20px;
+   top: 20px;
+   z-index: 100;
+}
 
 .menu-nav__menu-list {
    list-style: none;
@@ -1064,7 +1074,6 @@ html, body {
    .container {
       max-width: 92.18%;
    }
-   .mobile-off,
    .flying-symbol_fly-5 {
       display: none;
    }
@@ -1072,6 +1081,38 @@ html, body {
    .flying-symbol_fly-tablet {
       display: inline-block;
    }
+
+   .header-left__menu-nav_mobile {
+      display: none;
+      background: #2c2e3e;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      padding: 30px;
+      z-index: 9999;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+   }
+   .header-left__menu-close {
+      display: block;
+   }
+   .menu-nav__menu-list_mobile {
+      margin: 0;
+      padding: 0;
+   }
+   .menu__item_mobile {
+      display: block;
+      list-style: none;
+      margin: 10px 0;
+      padding: 0;
+   }
+   .menu-item__link_mobile {
+      font-size: 18px;
+      color: rgb(255, 255, 255);
+      line-height: 1.4;
+      text-decoration: none;
+   }
+
    .header__tel-number {
       margin-right: 31px;
    }
