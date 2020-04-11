@@ -1313,17 +1313,18 @@ html, body {
    }
    .my-name {
       position: absolute;
-      font-size: 40px;
+      font-size: 35px;
       top: 280px;
       left: 50%;
-      margin-left: -175px;
+      margin-left: -160px;
       z-index: 3;
    }
    .my-description {
       position: absolute;
+      font-size: 16px;
       top: 515px;
       left: 50%;
-      margin-left: -180px;
+      margin-left: -155px;
       z-index: 3;
    }
    .btn_red_presentation {
@@ -1348,11 +1349,9 @@ html, body {
       padding-top: 265px;
       padding-bottom: 105px;
    }
-   .section__title {
-      font-size: 40px;
-   }
    .what-i-do__title {
       margin-bottom: 70px;
+      font-size: 40px;
    }
    .abilities {
       margin-bottom: 40px;
@@ -1370,6 +1369,9 @@ html, body {
    }
    .ability__descr, .swiper-slide__discr {
       font-size: 18px;
+   }
+   .my-works__title {
+      font-size: 27px;
    }
    .swiper-container {
       height: 520px;
