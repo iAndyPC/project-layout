@@ -37,7 +37,7 @@ $(document).ready(function(){
           function(){ // пoсле oкoнчaния пoкaзывaния oверлэя
          $(div) // берем стрoку с селектoрoм и делaем из нее jquery oбъект
              .css('display', 'block')
-             .animate({opacity: 1, top: '40%'}, 200); // плaвнo пoкaзывaем
+             .animate({opacity: 1, top: '50%'}, 200); // плaвнo пoкaзывaем
       });
    });
 
@@ -105,6 +105,20 @@ $(document).ready(function(){
          errorPlacement(error, element) {
             return true;
          },
+         messages: {
+            Телефон: {
+               required: "Поле 'Телефон' обязательно к заполнению"
+            },
+            Имя: {
+               required: "Поле 'Имя' обязательно к заполнению",
+               maxlength: "Максимум 25 символов",
+               minlength: "Введите минимум 2 символа"
+            },
+            Email: {
+               required: "Поле 'Email' обязательно к заполнению",
+               email: "Необходимо ввести корректный Email"
+            }
+         },
          focusInvalid: false,
          rules: {
             Телефон: {
@@ -113,6 +127,7 @@ $(document).ready(function(){
             Имя: {
                required: true,
                maxlength: 25,
+               minlength: 2
             },
             Email: {
                required: true,
@@ -129,6 +144,7 @@ $(document).ready(function(){
                url: './php/mail.php',
                data: th.serialize(),
             }).done(() => {
+               alert('Отправлено, ожидайте звонка.');
                th.trigger('reset');
                $(modal).animate(
                    {opacity: 0, top: '45%'}, 200, function () {

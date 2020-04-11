@@ -143,7 +143,7 @@ html, body {
    display: block;
    width: 28px;
    height: 28px;
-   background: url(https://snipp.ru/demo/449/close.png) 0 0 repeat;
+   background: url(../img/close.png) 0 0 repeat;
    position: absolute;
    right: 20px;
    top: 20px;
@@ -697,10 +697,10 @@ html, body {
    width: 500px;
    height: 400px; /* Размеры должны быть фиксированы */
    background: #f3f3f3;
-   font-family: 'Ubuntu', sans-serif;
+   font-family: Nunito, Roboto, sans-serif;
    border-radius: 1px;
    position: fixed; /* чтобы окно было в видимой зоне в любом месте */
-   top: 35%; /* отступаем сверху 45%, остальные 5% подвинет скрипт */
+   top: 45%; /* отступаем сверху 45%, остальные 5% подвинет скрипт */
    left: 45%; /* половина экрана слева */
    margin-top: -150px;
    margin-left: -150px; /* отступаем влево и вверх минус половину ширины и высоты соответственно */
@@ -731,6 +731,10 @@ html, body {
    pointer-events: none;
 }
 
+.error {
+   border: 2px solid rgba(229, 66, 66, .8) !important;
+}
+
 .modal_close {
    width: 35px;
    height: 32px;
@@ -750,9 +754,6 @@ html, body {
 
 .form-callback {
 
-}
-.form-callback br {
-   display: none;
 }
 
 .form__title {
@@ -783,9 +784,9 @@ html, body {
 .input:valid:not(:placeholder-shown) {
    border: 2px solid rgba(0, 165, 80, .8);
 }
-.input:invalid:not(:placeholder-shown) {
+/* .input:invalid:not(:placeholder-shown) {
    border: 2px solid rgba(229, 66, 66, .8);
-}
+} */
 
 .form__input-name {
    display: block;
@@ -1379,9 +1380,6 @@ html, body {
    }
    .fa-times {
       color: black;
-   }
-   .form-callback br {
-      display: block;
    }
    .form__input-name, .form__input-tel, .form__input-email {
       margin: 0 10px 10px 10px;
