@@ -5,7 +5,7 @@ $(document).ready(function(){
    //Mobile menu
    $(function() {
       var $menu_popup = $('.header-left__menu-nav_mobile');
-      $(".header-left__menu-btn, .header-left__menu-close, .menu-item__link_mobile").click(function(){
+      $(".header-left__menu-btn, .header-left__menu-close").click(function(){
          $menu_popup.slideToggle(300, function(){
             if ($menu_popup.is(':hidden')) {
                $('body').removeClass('body_pointer');
@@ -15,10 +15,17 @@ $(document).ready(function(){
          });
          return false;
       });
-      $(document).on('click', function(e){
+      $(".menu").on('click', function(e){
          if (!$(e.target).closest('.menu').length){
             $('body').removeClass('body_pointer');
             $menu_popup.slideUp(300);
+         }
+      });
+      $(window).resize(function () {
+         if ($(window).width() > 1025) {
+            $(".header-left__menu-nav").css('display', 'block');
+         } else  {
+            $(".header-left__menu-nav").css('display', 'none');
          }
       });
    });
@@ -37,7 +44,7 @@ $(document).ready(function(){
           function(){ // пoсле oкoнчaния пoкaзывaния oверлэя
          $(div) // берем стрoку с селектoрoм и делaем из нее jquery oбъект
              .css('display', 'block')
-             .animate({opacity: 1, top: '50%'}, 200); // плaвнo пoкaзывaем
+             .animate({opacity: 1, top: '43%'}, 200); // плaвнo пoкaзывaем
       });
    });
 

@@ -125,15 +125,13 @@ html, body {
    display: block;
    content: "";
    height: 2px;
-   width: 0%;
+   width: 0;
    -webkit-transition: width .3s ease-in-out;
    -moz-transition: width .3s ease-in-out;
    transition: width .3s ease-in-out;
 }
 .menu-item__link:hover:after,
-.menu-item__link:focus:after,
-.footer-menu__a:hover:after,
-.footer-menu__a:focus:after {
+.footer-menu__a:hover:after {
    width: 100%;
 }
 
@@ -201,7 +199,7 @@ html, body {
    padding: 12px 43px;
    border-radius: 3px;
    cursor: pointer;
-   transition: ease-in-out .3s;
+   transition: transform ease-in-out .3s, box-shadow ease-in-out .3s;
 }
 .btn_blank:hover {
    box-shadow: 0 11px 14px rgba(252,85,124,.4);
@@ -222,7 +220,7 @@ html, body {
    top: 0;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
-   transition: all 1s cubic-bezier(0.77, 0, 0.175, 1) .5s;
+   transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1) .5s;
 }
 
 .flying-symbol_fly-1 {
@@ -292,7 +290,7 @@ html, body {
    text-shadow: 0 0 1px gray;
    cursor: pointer;
    max-width: 130px;
-   transition: ease-in-out .3s;
+   transition: transform ease-in-out .3s, box-shadow ease-in-out .3s;
 }
 .btn_red:hover {
    box-shadow: 0 11px 14px rgba(255,78,46,.4);
@@ -650,9 +648,11 @@ html, body {
 }
 .social-networks__link {
    display: inline-block;
+   transition: filter .3s;
 }
 .social-networks__link:hover {
    filter: brightness(.4);
+   transition: filter .3s;
 }
 
 .footer__vk {
@@ -1291,20 +1291,27 @@ html, body {
       box-shadow: none;
       transform: none;
    }
+   .header__tel-number {
+      font-size: 18px;
+   }
    .presentation {
       padding-bottom: 430px;
    }
    .flying-symbol_fly-1 {
-      transform: rotate(30deg) translateX(21vw) translateY(13vw);
+      transform: rotate(30deg) translateX(51vw) translateY(-34vw);
+      font-size: 29px;
    }
    .flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(19vw) translateY(37vw);
+      transform: rotate(16deg) translateX(43vw) translateY(-11vw);
+      font-size: 38px;
    }
    .flying-symbol_fly-3 {
-      transform: rotate(-22deg) translateX(16vw) translateY(19vw);
+      transform: rotate(-22deg) translateX(73vw) translateY(26.5vw);
+      font-size: 27px;
    }
    .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(37vw) translateY(15vw);
+      transform: rotate(-12deg) translateX(86.5vw) translateY(26vw);
+      font-size: 23px;
    }
    .flying-symbol_fly-tablet,
    .promo__flying-symbol_fly-1, .promo__flying-symbol_fly-3, .promo__flying-symbol_fly-4,
@@ -1370,11 +1377,17 @@ html, body {
    .ability__descr, .swiper-slide__discr {
       font-size: 18px;
    }
+   .my-works {
+      padding-top: 7vw;
+      padding-bottom: 7vw;
+   }
    .my-works__title {
       font-size: 27px;
+      margin-bottom: 7vw;
    }
    .swiper-container {
-      height: 520px;
+      height: 415px;
+      margin-bottom: 60px;
    }
    .swiper-slide__discr {
       font-weight: 500;
@@ -1396,6 +1409,9 @@ html, body {
    }
    .footer__mail {
       margin: 0 auto 0 0;
+   }
+   .footer-mail__text {
+      font-size: 24px;
    }
    .footer__contacts {
       padding-left: 0;
@@ -1449,9 +1465,6 @@ html, body {
    }
    .fa-bars {
       font-size: 28px;
-   }
-   .header__tel-number {
-      font-size: 18px;
    }
    .btn_blank_mobile {
       padding: 15px;
