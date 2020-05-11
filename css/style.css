@@ -3,13 +3,9 @@
    font-family: 'Roboto';
    font-style: normal;
    font-weight: 400;
-   src: url('../fonts/roboto-v20-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
    src: local('Roboto'), local('Roboto-Regular'),
-   url('../fonts/roboto-v20-latin_cyrillic-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
    url('../fonts/roboto-v20-latin_cyrillic-regular.woff2') format('woff2'), /* Super Modern Browsers */
-   url('../fonts/roboto-v20-latin_cyrillic-regular.woff') format('woff'), /* Modern Browsers */
-   url('../fonts/roboto-v20-latin_cyrillic-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-   url('../fonts/roboto-v20-latin_cyrillic-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+   url('../fonts/roboto-v20-latin_cyrillic-regular.woff') format('woff'); /* Modern Browsers */
 }
 
 /* roboto-700 - latin_cyrillic */
@@ -17,13 +13,9 @@
    font-family: 'Roboto';
    font-style: normal;
    font-weight: 700;
-   src: url('../fonts/roboto-v20-latin_cyrillic-700.eot'); /* IE9 Compat Modes */
    src: local('Roboto Bold'), local('Roboto-Bold'),
-   url('../fonts/roboto-v20-latin_cyrillic-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
    url('../fonts/roboto-v20-latin_cyrillic-700.woff2') format('woff2'), /* Super Modern Browsers */
-   url('../fonts/roboto-v20-latin_cyrillic-700.woff') format('woff'), /* Modern Browsers */
-   url('../fonts/roboto-v20-latin_cyrillic-700.ttf') format('truetype'), /* Safari, Android, iOS */
-   url('../fonts/roboto-v20-latin_cyrillic-700.svg#Roboto') format('svg'); /* Legacy iOS */
+   url('../fonts/roboto-v20-latin_cyrillic-700.woff') format('woff'); /* Modern Browsers */
 }
 
 /* roboto-900 - latin_cyrillic */
@@ -31,13 +23,9 @@
    font-family: 'Roboto';
    font-style: normal;
    font-weight: 900;
-   src: url('../fonts/roboto-v20-latin_cyrillic-900.eot'); /* IE9 Compat Modes */
    src: local('Roboto Black'), local('Roboto-Black'),
-   url('../fonts/roboto-v20-latin_cyrillic-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
    url('../fonts/roboto-v20-latin_cyrillic-900.woff2') format('woff2'), /* Super Modern Browsers */
-   url('../fonts/roboto-v20-latin_cyrillic-900.woff') format('woff'), /* Modern Browsers */
-   url('../fonts/roboto-v20-latin_cyrillic-900.ttf') format('truetype'), /* Safari, Android, iOS */
-   url('../fonts/roboto-v20-latin_cyrillic-900.svg#Roboto') format('svg'); /* Legacy iOS */
+   url('../fonts/roboto-v20-latin_cyrillic-900.woff') format('woff'); /* Modern Browsers */
 }
 .site {
    overflow: hidden;
@@ -1245,7 +1233,7 @@ html, body {
       font-size: 19px;
    }
    .btn_red {
-      padding: 19px 70px;
+      padding: 19px 68px;
    }
    .section__title {
       font-size: 5.63vw;
@@ -1294,15 +1282,18 @@ html, body {
    .header__tel-number {
       font-size: 18px;
    }
+   .container_presentation {
+      align-items: center;
+   }
    .presentation {
-      padding-bottom: 430px;
+      padding-bottom: 7px;
    }
    .flying-symbol_fly-1 {
-      transform: rotate(30deg) translateX(51vw) translateY(-34vw);
+      transform: rotate(30deg) translateX(13vw) translateY(-9vw);
       font-size: 29px;
    }
    .flying-symbol_fly-2 {
-      transform: rotate(16deg) translateX(43vw) translateY(-11vw);
+      transform: rotate(16deg) translateX(4.5vw) translateY(5vw);
       font-size: 38px;
    }
    .flying-symbol_fly-3 {
@@ -1310,7 +1301,7 @@ html, body {
       font-size: 27px;
    }
    .flying-symbol_fly-4 {
-      transform: rotate(-12deg) translateX(86.5vw) translateY(26vw);
+      transform: rotate(-12deg) translateX(82.5vw) translateY(25vw);
       font-size: 23px;
    }
    .flying-symbol_fly-tablet,
@@ -1344,12 +1335,13 @@ html, body {
    .presentation__color-figure {
       width: 930px;
       top: -20px;
-      right: -190px;
+      right: -165px;
       transform: rotate(5deg);
    }
    .presentation__man {
+      position: relative;
       width: 360px;
-      right: -25px;
+      right: 5px;
       top: 7px;
    }
    .what-i-do {
@@ -1426,7 +1418,7 @@ html, body {
       margin-bottom: 50px;
    }
    .modal-div {
-      margin-left: -110px;
+      margin-left: -133px;
       padding: 0;
       width: 300px;
    }
@@ -1472,7 +1464,7 @@ html, body {
 
 
    .presentation {
-      padding-bottom: 388px;
+      padding-bottom: 42px;
    }
    .presentation__man {
       width: 295px;

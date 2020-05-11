@@ -23,9 +23,10 @@ $(document).ready(function(){
       });
       $(window).resize(function () {
          if ($(window).width() > 1025) {
-            $(".header-left__menu-nav").css('display', 'block');
+            $(".header-left__menu-nav, .header-left__menu-nav_footer").css('display', 'block');
          } else  {
-            $(".header-left__menu-nav").css('display', 'none');
+            $(".header-left__menu-nav").css('display', 'none'),
+            $(".header-left__menu-nav_footer").css('display', 'block');
          }
       });
    });
