@@ -208,7 +208,7 @@ html, body {
    top: 0;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
-   transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1) .5s;
+   /* transition: transform 1s cubic-bezier(0.77, 0, 0.175, 1) .5s; */
 }
 
 .flying-symbol_fly-1 {
@@ -1449,7 +1449,7 @@ html, body {
       margin-left: 15px;
    }
 }
-@media (max-width: 320px) {
+@media (max-width: 576px) {
    .header {
       background-color: #fbfbfb;
       padding-top: 24px;
@@ -1491,7 +1491,9 @@ html, body {
    }
    .flying-symbol_fly-4 {
       font-size: 15px;
-      transform: rotate(18deg) translateX(721%) translateY(-78%);
+      /* transform: rotate(18deg) translateX(721%) translateY(-78%); */
+      left: auto;
+      top: 28px;
    }
    .my-name {
       font-size: 30px;
@@ -1514,7 +1516,6 @@ html, body {
       top: 516px;
       margin-left: -139px;
    }
-
 
    .what-i-do {
       padding-top: 224px;
@@ -1550,19 +1551,20 @@ html, body {
       padding: 17px 66px;
    }
 
-
    .my-works {
       padding-bottom: 52px;
       padding-top: 42px;
    }
    .my-works__title {
       margin-bottom: 39px;
+      font-size: 27px;
    }
    .container-for-swiper {
       margin-bottom: 0;
    }
    .swiper-container {
       height: 360px;
+      width: 280px;
       margin-bottom: 31px;
    }
    .swiper-slide__img {
