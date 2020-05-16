@@ -125,6 +125,9 @@ $(document).ready(function(){
             Email: {
                required: "Поле 'Email' обязательно к заполнению",
                email: "Необходимо ввести корректный Email"
+            },
+            Checkbox: {
+               required: "Нужно поставить галочку"
             }
          },
          focusInvalid: false,
@@ -140,6 +143,9 @@ $(document).ready(function(){
             Email: {
                required: true,
                email: true
+            },
+            Checkbox: {
+               required: true
             }
          },
          submitHandler(form) {
